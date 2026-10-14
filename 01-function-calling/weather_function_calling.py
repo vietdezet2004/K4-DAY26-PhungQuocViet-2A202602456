@@ -9,6 +9,10 @@ Cách chạy:
     python weather_function_calling.py
 """
 
+from dotenv import load_dotenv
+
+load_dotenv()  # Tự động nạp biến môi trường từ file .env
+
 from google import genai
 from google.genai import types
 

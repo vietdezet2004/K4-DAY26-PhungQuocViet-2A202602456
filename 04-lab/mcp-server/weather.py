@@ -1,7 +1,14 @@
+import os
 from typing import Any
 import asyncio
 import httpx
-import os
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 from mcp.server.fastmcp import FastMCP
 
 # Initialize FastMCP server
