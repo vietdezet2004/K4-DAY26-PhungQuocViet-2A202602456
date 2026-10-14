@@ -41,6 +41,15 @@ async def main() -> None:
                 print(f"\ncall_tool get_weather(city={city!r}):")
                 print("  ->", result.content[0].text)
 
+            # 3. Gọi tool get_forecast mới thêm vào server
+            print("\n" + "=" * 40)
+            print("Gọi tool get_forecast mới:")
+            forecast_result = await session.call_tool(
+                "get_forecast", {"city": "Hanoi", "days": 2}
+            )
+            print(f"call_tool get_forecast('Hanoi', days=2):")
+            print("  ->", forecast_result.content[0].text)
+
 
 if __name__ == "__main__":
     asyncio.run(main())
